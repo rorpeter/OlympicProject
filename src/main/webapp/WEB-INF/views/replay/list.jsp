@@ -73,28 +73,18 @@
 
     <div class="form-group row">
         <div class="col"></div>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                종목
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item">스키점프</a>
-                <a class="dropdown-item">스켈레톤</a>
-                <a class="dropdown-item">쇼트트랙</a>
-                <a class="dropdown-item">컬링</a>
-                <a class="dropdown-item">피겨</a>
-            </div>
-        </div>
-        <%--<select name="event" id="event" class="form-control col-4" style="font-size: 25px; font-weight: bold; margin-right: 10px">
-            <option>종목</option>
-            <option value="skijump">스키점프</option>
-            <option value="skeleton">스켈레톤</option>
-            <option value="short">쇼트트랙</option>
-            <option value="curling">컬링</option>
-            <option value="figure">피겨</option>
-        </select>--%>
-        <select id="country" name="country" class="form-control col-4" style="font-size: 25px; font-weight: bold">
-            <option>팀</option>
+
+            <select name="event" id="event" class="form-control col-4" style="font-size: 25px; font-weight: bold; margin-right: 10px">
+                <option value="">종목</option>
+                <option value="skijump">스키점프</option>
+                <option value="skeleton">스켈레톤</option>
+                <option value="short">쇼트트랙</option>
+                <option value="curling">컬링</option>
+                <option value="figure">피겨</option>
+            </select>
+
+        <select name=country id="country" class="form-control col-4" style="font-size: 25px; font-weight: bold; margin-right: 10px">
+            <option value="">팀</option>
             <option value="kor">한국</option>
             <option value="usa">미국</option>
             <option value="gbr">영국</option>
