@@ -10,6 +10,6 @@ public class IndexController {
     @GetMapping("/")
     public String index(Model m){
 
-        return "index";
+        return "index.tiles";
     }
 }

@@ -59,7 +59,7 @@
 
     <!-- 스프링 IOC에 의해 초기화할 클래스들이 있는 패키지 지정 -->
     <context:component-scan
-            base-package="rorpeter.spring4.mvc"/>
+            base-package="olympic.spring4.mvc"/>
 
 
 </beans>
