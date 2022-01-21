@@ -4,10 +4,10 @@
 <header class="row">
 
     <div class="col" >
-        <img src="/imgss/Olympichome.jpg" id="home">
+        <img src="imgss/Olympichome.jpg" id="home">
     </div>
     <div class="col-5" id="logo">
-        <img src="/imgss/%EA%B4%91%EA%B3%A0.png">
+        <img src="imgss/%EA%B4%91%EA%B3%A0.png">
     </div>
     <div class="col-3 text-right">
         <button type="button"
@@ -38,16 +38,16 @@
             <a class="nav-link" href="intro.html">종목</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="intro.html">일정</a>
+            <a class="nav-link" href="schedule">일정</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="news/agree.html">뉴스</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="reply/list.html">다시보기</a>
+            <a class="nav-link" href="replay">다시보기</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/board/list?cpage=1">게시판</a>
+            <a class="nav-link" href="board/list.html">게시판</a>
         </li>
     </ul>
     <div class="col"></div>
