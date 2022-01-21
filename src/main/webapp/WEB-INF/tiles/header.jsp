@@ -38,13 +38,13 @@
             <a class="nav-link" href="intro.html">종목</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="intro.html">일정</a>
+            <a class="nav-link" href="schedule">일정</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="news/agree.html">뉴스</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="reply/list.html">다시보기</a>
+            <a class="nav-link" href="replay">다시보기</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="board/list.html">게시판</a>
