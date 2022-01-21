@@ -4,10 +4,10 @@
 <header class="row">
 
     <div class="col" >
-        <img src="imgss/Olympichome.jpg" id="home">
+        <img src="/imgss/Olympichome.jpg" id="home">
     </div>
     <div class="col-5" id="logo">
-        <img src="imgss/%EA%B4%91%EA%B3%A0.png">
+        <img src="/imgss/광고.png">
     </div>
     <div class="col-3 text-right">
         <button type="button"
@@ -27,7 +27,7 @@
     </div>
 </header> <!-- header-end -->
 <div class="row">
-    <img src="imgss/%EC%9D%B4%EB%AF%B8%EC%A7%80_20220119_001.png"
+    <img src="/imgss/이미지_20220119_001.png"
          style="width: 100%" class="img-fluid">
 </div>
 
@@ -44,7 +44,7 @@
             <a class="nav-link" href="news/agree.html">뉴스</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="reply/list.html">다시보기</a>
+            <a class="nav-link" href="replay">다시보기</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="board/list.html">게시판</a>

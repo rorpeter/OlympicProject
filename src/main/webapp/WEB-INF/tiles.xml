@@ -26,21 +26,22 @@
          <put-attribute name="scripts" value="/WEB-INF/views/member/memberscripts.jsp" />
     </definition>
 
-    <definition name="board/*.tiles" extends="base">
-        <put-attribute name="body" value="/WEB-INF/views/board/{1}.jsp" />
-        <put-attribute name="styles" value="/WEB-INF/views/board/boardstyles.jsp" />
-        <put-attribute name="scripts" value="/WEB-INF/views/board/boardscripts.jsp" />
-    </definition>
-
     <definition name="news/*.tiles" extends="base">
         <put-attribute name="body" value="/WEB-INF/views/news/{1}.jsp" />
         <put-attribute name="styles" value="/WEB-INF/views/news/newsstyles.jsp" />
         <put-attribute name="scripts" value="/WEB-INF/views/news/newsscripts.jsp" />
     </definition>
 
-    <definition name="gallery/*.tiles" extends="base">
-        <put-attribute name="body" value="/WEB-INF/views/gallery/{1}.jsp" />
-        <put-attribute name="scripts" value="/WEB-INF/views/gallery/galleryscripts.jsp" />
+    <definition name="replay/*.tiles" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/replay/{1}.jsp" />
+        <put-attribute name="styles" value="/WEB-INF/views/replay/replaystyles.jsp" />
+        <put-attribute name="scripts" value="/WEB-INF/views/replay/replayscripts.jsp" />
+    </definition>
+
+    <definition name="board/*.tiles" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/board/{1}.jsp" />
+        <put-attribute name="styles" value="/WEB-INF/views/board/boardstyles.jsp" />
+        <put-attribute name="scripts" value="/WEB-INF/views/board/boardscripts.jsp" />
     </definition>
     
 </tiles-definitions>
