@@ -10,9 +10,9 @@
       <div id="main">
           <div class="mt25">
               <h2><i class="bi bi-chat-text-fill"></i>자유게시판</h2>
-              <hr>
           </div>
-          
+          <hr>
+
           <div class="row">
               <div class="col"></div>    
               <div class="col-5">

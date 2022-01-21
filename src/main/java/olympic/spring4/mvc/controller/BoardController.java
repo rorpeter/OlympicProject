@@ -51,7 +51,7 @@ public class BoardController {
     }
 
     //본문보기
-    @GetMapping("/board/biew")
+    @GetMapping("/board/view")
     public ModelAndView view(String bno, ModelAndView mv){
 
         mv.setViewName("board/view.tiles");

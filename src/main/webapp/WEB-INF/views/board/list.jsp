@@ -42,13 +42,13 @@
 </c:if>
 
 
-      <div id="main">
+      <div id="container">
           <div class="mt25">
-              <h2><i class="bi bi-chat-text-fill"></i>
-                  자유게시판<span> ${cp} ${sp} ${ep} ${bdcnt} ${tp}</span></h2>
-              <hr>
+              <h3><i class="bi bi-chat-text-fill"></i>
+                  자유게시판</h3>
           </div>
-          
+          <hr>
+
           <div class="row">
              <div class="col"></div>
               <div class="col-5 form-group row">
@@ -88,13 +88,23 @@
                       
                       <tbody>
                           <tr class="text-danger">
-                              <th>공지</th>
+                              <th>인기</th>
                               <th><span class="badge-danger">Hot</span>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.</th>
-                              <th>관리자</th>
+                                    평창올림픽 한지 엊그제같은데 벌써 올림픽하는거 실화냐?가슴이 웅장해진다 ㅇㅈ하면 추천 ㄱㄱ</th>
+                              <th>rorpeter</th>
                               <th>2021.12.31</th>
                               <th>999</th>
                               <th>123</th>
+                          </tr>
+
+                          <tr class="text-info">
+                              <th>공지</th>
+                              <th><span class="badge-info">필독</span>
+                                    불법도박하지 않는 청렴한 회원이 되세요</th>
+                              <th>관리자</th>
+                              <th>2022.01.21</th>
+                              <th>486</th>
+                              <th>12</th>
                           </tr>
 
                           <%-- for (BoardVO b : bd) java list부분참고--%>
