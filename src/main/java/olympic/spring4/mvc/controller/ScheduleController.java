@@ -1,4 +1,4 @@
-package olympic.spring4.mvc.controller.controller;
+package olympic.spring4.mvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,6 +1,6 @@
-package olympic.spring4.mvc.controller.dao;
+package olympic.spring4.mvc.dao;
 
-import olympic.spring4.mvc.controller.vo.ReplayVO;
+import olympic.spring4.mvc.vo.ReplayVO;
 
 import java.util.List;
 

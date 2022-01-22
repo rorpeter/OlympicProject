@@ -1,7 +1,7 @@
-package olympic.spring4.mvc.controller.service;
+package olympic.spring4.mvc.service;
 
-import olympic.spring4.mvc.controller.dao.ReplayDAO;
-import olympic.spring4.mvc.controller.vo.ReplayVO;
+import olympic.spring4.mvc.dao.ReplayDAO;
+import olympic.spring4.mvc.vo.ReplayVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

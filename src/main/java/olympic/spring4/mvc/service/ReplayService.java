@@ -1,8 +1,8 @@
-package olympic.spring4.mvc.controller.service;
+package olympic.spring4.mvc.service;
 
 
 
-import olympic.spring4.mvc.controller.vo.ReplayVO;
+import olympic.spring4.mvc.vo.ReplayVO;
 
 import java.util.List;
 

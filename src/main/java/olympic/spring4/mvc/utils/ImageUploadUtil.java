@@ -1,4 +1,4 @@
-package olympic.spring4.mvc.controller.utils;
+package olympic.spring4.mvc.utils;
 
 import org.imgscalr.Scalr;
 import org.springframework.stereotype.Component;

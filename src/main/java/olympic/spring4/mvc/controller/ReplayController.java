@@ -1,7 +1,7 @@
-package olympic.spring4.mvc.controller.controller;
+package olympic.spring4.mvc.controller;
 
 
-import olympic.spring4.mvc.controller.service.ReplayService;
+import olympic.spring4.mvc.service.ReplayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package olympic.spring4.mvc.controller.utils;
+package olympic.spring4.mvc.utils;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

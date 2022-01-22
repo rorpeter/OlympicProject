@@ -1,4 +1,4 @@
-package olympic.spring4.mvc.controller.vo;
+package olympic.spring4.mvc.vo;
 
 import lombok.*;
 

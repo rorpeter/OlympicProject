@@ -1,4 +1,4 @@
-package olympic.spring4.mvc.controller.controller;
+package olympic.spring4.mvc.controller;
 
 
 import org.json.simple.JSONObject;
