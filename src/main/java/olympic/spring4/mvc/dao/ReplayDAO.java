@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface ReplayDAO {
 
-    List<ReplayVO> selectReplay(String event);
+    List<ReplayVO> selectReplay(int startnum, String event, String country);
+
+    int countReplay(String event, String country);
 }

@@ -15,5 +15,7 @@ public class ReplayVO {
     private String country;
     private String rec;
     private String views;
+    private String fname;
+    private String contents;
 
 }

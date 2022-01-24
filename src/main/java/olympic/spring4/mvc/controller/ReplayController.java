@@ -18,11 +18,14 @@ public class ReplayController {
     }
 
     @GetMapping("/replay")
-    public ModelAndView list(ModelAndView mv, String event) {
+    public ModelAndView list(ModelAndView mv, String cpage, String event, String country) {
+
+        if (cpage == null) cpage = "1";
 
         mv.setViewName("replay/list.tiles");
 
-        mv.addObject("rbd", rsrv.readReplay(event));
+        mv.addObject("rbd", rsrv.readReplay(cpage, event, country));
+        mv.addObject("rbdcnt", rsrv.countReplay(event,country));
 
         return mv;
     }

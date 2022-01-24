@@ -15,8 +15,18 @@ public class ReplayServiceImpl implements ReplayService {
 
 
     @Override
-    public List<ReplayVO> readReplay(String event) {
+    public List<ReplayVO> readReplay(String cpage, String event, String country) {
 
-        return rdao.selectReplay(event);
+        int startnum = Integer.parseInt(cpage) * 3;
+
+        return rdao.selectReplay(startnum, event, country);
     }
+
+    @Override
+    public int countReplay(String event, String country) {
+
+        return rdao.countReplay(event,country);
+    }
+
+
 }

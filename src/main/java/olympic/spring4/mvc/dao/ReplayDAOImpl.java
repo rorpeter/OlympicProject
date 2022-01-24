@@ -14,30 +14,57 @@ public class ReplayDAOImpl implements ReplayDAO {
 
     @Autowired private JdbcTemplate jdbcTemplate;
     @Value("#{sql['selectReplay']}") private String selectReplay;
+    @Value("#{sql['pagingReplay']}") private String pagingReplay;
+    @Value("#{sql['countReplay']}") private String countReplay;
 
 
     @Override
-    public List<ReplayVO> selectReplay(String event) {
-        Object[] params = new Object[] { event };
-
-//        String dynaSQL = selectReplay;
-//        String whereSQL = "";
-//
-//        if ( event != null) {
-//            whereSQL = String.format(" where event like %s", event);
-//            dynaSQL = selectReplay + whereSQL;
-//
-//        }
+    public List<ReplayVO> selectReplay(int startnum, String event, String country) {
+        Object[] params = new Object[] { startnum };
 
 
-        return jdbcTemplate.query(selectReplay, params,
+        String dynaSQL = selectReplay + pagingReplay;
+        String whereSQL = "";
+
+        if ( event != null ) {
+            whereSQL = String.format(" where event = '%s' ", event);
+            dynaSQL = selectReplay + whereSQL + pagingReplay;
+        } else if ( country != null ) {
+            whereSQL = String.format(" where country = '%s' ", country);
+            dynaSQL = selectReplay + whereSQL + pagingReplay;
+        }
+
+
+        return jdbcTemplate.query(dynaSQL, params,
                 (rs, num) -> new ReplayVO(
                    rs.getString("rno"),
                    rs.getString("title"),
                    rs.getString("event"),
                    rs.getString("country"),
                    rs.getString("rec"),
-                   rs.getString("views") ) );
+                   rs.getString("views"),
+                   rs.getString("fname"),
+                   rs.getString("contents")
+                ) );
+
+    }
+
+    @Override
+    public int countReplay(String event, String country) {
+
+        String dynaSQL = countReplay;
+        String whereSQL = "";
+
+        if ( event != null ) {
+            whereSQL = String.format(" where event = '%s' ", event);
+            dynaSQL = countReplay + whereSQL;
+        } else if ( country != null ) {
+            whereSQL = String.format(" where country = '%s' ", country);
+            dynaSQL = countReplay + whereSQL;
+        }
+
+
+        return jdbcTemplate.queryForObject(dynaSQL, Integer.class );
 
     }
 }

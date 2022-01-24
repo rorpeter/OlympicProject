@@ -44,7 +44,7 @@
             <a class="nav-link" href="news/agree.html">뉴스</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="replay">다시보기</a>
+            <a class="nav-link" href="replay?cpage=1">다시보기</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="board/list.html">게시판</a>

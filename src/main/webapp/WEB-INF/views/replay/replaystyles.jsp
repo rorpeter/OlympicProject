@@ -9,4 +9,8 @@
     #main { margin-top: 20px}
     img{width: 100%}
 
+    ul { float: left; }
+
+    p {word-wrap: break-word;}
+
 </style>
