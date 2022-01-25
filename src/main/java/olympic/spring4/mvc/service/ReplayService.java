@@ -11,4 +11,6 @@ public interface ReplayService {
     List<ReplayVO> readReplay(String cpage, String event, String country);
 
     int countReplay(String event, String country);
+
+    String morePlay(String rno);
 }

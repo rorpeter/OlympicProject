@@ -19,4 +19,9 @@
         location.href = '/logout';
     });
 
+    // 종목(네비) 마우스 오버 처리
+    $('#eventnav').on('mouseover', function (){
+
+    });
+
 </script>

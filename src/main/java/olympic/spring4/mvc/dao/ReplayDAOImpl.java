@@ -16,6 +16,7 @@ public class ReplayDAOImpl implements ReplayDAO {
     @Value("#{sql['selectReplay']}") private String selectReplay;
     @Value("#{sql['pagingReplay']}") private String pagingReplay;
     @Value("#{sql['countReplay']}") private String countReplay;
+    @Value("#{sql['selectAjaxReplay']}") private String selectAjaxReplay;
 
 
     @Override
@@ -67,4 +68,24 @@ public class ReplayDAOImpl implements ReplayDAO {
         return jdbcTemplate.queryForObject(dynaSQL, Integer.class );
 
     }
+
+    @Override
+    public List<ReplayVO> selectAjaxReplay(String rno) {
+        Object[] params = new Object[] {};
+
+
+        return jdbcTemplate.query(selectAjaxReplay, params,
+                (rs, num) -> new ReplayVO(
+                        rs.getString("rno"),
+                        rs.getString("title"),
+                        rs.getString("event"),
+                        rs.getString("country"),
+                        rs.getString("rec"),
+                        rs.getString("views"),
+                        rs.getString("fname"),
+                        rs.getString("contents")
+                ) );
+
+    }
+
 }

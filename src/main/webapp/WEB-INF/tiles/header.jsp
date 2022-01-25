@@ -1,7 +1,21 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
+
 <header class="row">
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+
+        ul .dropdown-menu {
+            display: inline-block;
+            display: none;
+            float: left;
+        }
+    </style>
 
     <div class="col" >
         <img src="imgss/Olympichome.jpg" id="home">
@@ -34,8 +48,17 @@
 <nav class="nav navbar-expand navbar-light bg-light border">
 
     <ul class="navbar-nav nav-fill w-100">
-        <li class="nav-item">
-            <a class="nav-link" href="intro.html">종목</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="event" role="button" id="dropdownMenuLink"
+            data-toggle="dropdown" aria-expanded="false">종목</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-item" href="#"><img src="imgss/event/skijump_red.png"><p>스키점프</p></div>
+                <div class="dropdown-item" href="#"><img src="imgss/event/skeleton_red.png"><p>스켈레톤</p></div>
+
+
+
+
+            </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="schedule">일정</a>

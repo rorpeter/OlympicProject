@@ -28,7 +28,6 @@
 
 <div id="main">
     <div class="row">
-        <h3>${_scrollTop}</h3>
         <div class="col-3">
             <h2><i class="bi bi-snow3" style="color: blue"></i><b> 주요 영상</b></h2>
         </div>
@@ -45,7 +44,7 @@
                 <tr>
                     <td>
                         <a href="">
-                            <div style="position: relative"><img src="/imgss/curlingsample.jpg" img-fluid style="width: 500px"></div>
+                            <div style="position: relative"><img src="/imgss/replay/curlingsample.jpg" img-fluid style="width: 500px"></div>
                             <div style="position: absolute; margin: -41px 0 0 0"><button class="btn btn-primary" style="font-size: 15px">컬링</button></div>
                             <div style="position: absolute; margin: -41px 0 0 350px"><button class="btn btn-primary"><i class="bi bi-play-fill"></i></button></div>
                             <div style="position: absolute; margin: -41px 0 0 400px"><button style="width: 95px; height: 40px; font-size: 20px" class="btn btn-dark">2:30</button></div>
@@ -124,9 +123,9 @@
     <div class="row">
         <div class="col"></div>
         <div class="col-10" id="playmovs">
-            <c:forEach var="r" items="${rbd}">
-            <ul>
-                <li style="margin-right: 50px">
+            <ul id="movlist">
+            <c:forEach var="r" items="${rbd}" >
+            <li style="margin-right: 50px">
                 <a href="">
                     <div class="replayli" style="position: relative"><img src="${r.fname}" style="width: 380px;"></div>
                     <div style="position: absolute; margin: -41px 0 0 0"><button type="button" class="btn btn-primary" style="font-size: 15px">${r.event}</button></div>
@@ -136,9 +135,10 @@
                 <a href="">
                     <p style="width:380px; font-size:25px">${r.title}</p>
                 </a>
-                </li>
-            </ul>
+
+            </li>
             </c:forEach>
+            </ul>
         </div>
         <div class="col"></div>
     </div>
