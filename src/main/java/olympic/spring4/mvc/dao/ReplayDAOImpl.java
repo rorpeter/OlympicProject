@@ -70,9 +70,8 @@ public class ReplayDAOImpl implements ReplayDAO {
     }
 
     @Override
-    public List<ReplayVO> selectAjaxReplay(String rno) {
-        Object[] params = new Object[] {};
-
+    public List<ReplayVO> selectAjaxReplay(int startnum) {
+        Object[] params = new Object[] { startnum };
 
         return jdbcTemplate.query(selectAjaxReplay, params,
                 (rs, num) -> new ReplayVO(
@@ -83,8 +82,7 @@ public class ReplayDAOImpl implements ReplayDAO {
                         rs.getString("rec"),
                         rs.getString("views"),
                         rs.getString("fname"),
-                        rs.getString("contents")
-                ) );
+                        rs.getString("contents") ) );
 
     }
 

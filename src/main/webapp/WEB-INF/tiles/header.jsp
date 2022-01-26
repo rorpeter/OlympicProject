@@ -18,10 +18,10 @@
     </style>
 
     <div class="col" >
-        <img src="imgss/Olympichome.jpg" id="home">
+        <img src="/imgss/Olympichome.jpg" id="home">
     </div>
     <div class="col-5" id="logo">
-        <img src="imgss/%EA%B4%91%EA%B3%A0.png">
+        <img src="/imgss/%EA%B4%91%EA%B3%A0.png">
     </div>
     <div class="col-3 text-right">
         <button type="button"
@@ -41,7 +41,7 @@
     </div>
 </header> <!-- header-end -->
 <div class="row">
-    <img src="imgss/%EC%9D%B4%EB%AF%B8%EC%A7%80_20220119_001.png"
+    <img src="/imgss/%EC%9D%B4%EB%AF%B8%EC%A7%80_20220119_001.png"
          style="width: 100%" class="img-fluid">
 </div>
 
@@ -52,8 +52,8 @@
             <a class="nav-link dropdown-toggle" href="event" role="button" id="dropdownMenuLink"
             data-toggle="dropdown" aria-expanded="false">종목</a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <div class="dropdown-item" href="#"><img src="imgss/event/skijump_red.png"><p>스키점프</p></div>
-                <div class="dropdown-item" href="#"><img src="imgss/event/skeleton_red.png"><p>스켈레톤</p></div>
+                <div class="dropdown-item" href="#"><img src="/imgss/event/skijump_red.png"><p>스키점프</p></div>
+                <div class="dropdown-item" href="#"><img src="/imgss/event/skeleton_red.png"><p>스켈레톤</p></div>
 
 
 
@@ -67,7 +67,7 @@
             <a class="nav-link" href="news/agree.html">뉴스</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="replay?cpage=1">다시보기</a>
+            <a class="nav-link" href="replay">다시보기</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="board/list.html">게시판</a>

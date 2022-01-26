@@ -2,6 +2,8 @@
 
 <script>
 
+    var cnt = 0;
+
     // 종목 및 나라별 검색
     $('#event').on('change', function() {
 
@@ -28,7 +30,7 @@
         let makemovstr = '<li style="margin-right: 50px">';
         makemovstr += '<a href="">';
         makemovstr += '<div class="replayli" style="position: relative">';
-        makemovstr += '<img src="' + fname + '" style="width: 380px;"></div>';
+        makemovstr += '<img src="'+fname+'" style="width: 380px;"></div>';
         makemovstr += '<div style="position: absolute; margin: -41px 0 0 0">';
         makemovstr += '<button type="button" class="btn btn-primary" style="font-size: 15px">'+event+'</button></div>';
         makemovstr +='<div style="position: absolute; margin: -41px 0 0 110px">';
@@ -41,7 +43,9 @@
         makemovstr +='<p style="width:380px; font-size:25px">'+title+'</p>';
         makemovstr +='</a>';
         makemovstr +='</li>';
+        return makemovstr;
     }
+
 
 
     // 더보기 영상 출력 처리
@@ -49,44 +53,71 @@
 
         // $('#playmovs').attr('style', 'padding-bottom:299px');
 
-        var div = document.createElement('div');
-        var body = document.getElementById('playmovs')
-        //var end = document.getElementById('endplaymovs')
+        // var div = document.createElement('div');
+        // var body = document.getElementById('playmovsul');
 
-
+        // div.innerHTML = document.getElementById('playmovsul').innerHTML;
         //div.innerHTML = document.getElementById('playmovs').innerHTML;
-        div.innerHTML = document.getElementById('playmovs').innerHTML;
 
         //document.body.insertBefore(div, end);
-        body.appendChild(div);
+        // body.appendChild(div);
 
-        alert(document.print(makemovstr));
+        // $('.movcontent').find('ul').remove();
 
+        alert(document.getElementById('rno').value);
 
         $.ajax({
             url: '/replay/morePlay',
             type: 'GET',
+            data : { 'rno': $('#rno').val()}
 
         })
             .done(function (data) {
                 let d = JSON.stringify(data);
                 let test = JSON.parse(d);
 
-                // console.log(test);
-                 alert(test[0]);
-                // alert(test[0].fname);
 
-                alert(makemovs(test[0].fname, test[0].event));
 
-                // $('.replayli').find('img').remove();
-                <%--$('.replayli').append('<img src="${test[0].fname}">');--%>
+                let movediv = '';
 
-                // $('#addrlist').append(opts);
+                for(var i=0; i<makemovs.length; i++) {
+                    console.log(test[i]);
+                    movediv += makemovs(test[i].fname, test[i].event, test[i].title);
+
+                    //document.write(movediv);
+
+                    // let codes = movediv;
+                    // return (
+                    //     <div dangerouslySetInnerHTML={ {__html: codes} }>
+                    //     </div>
+                    // );
+
+
+                    //document.getElementById('playmovsul').append(movediv).innerHTML;
+
+                    //document.getElementById('playmovsul').append(movediv);
+
+                    // let ul = '<ul>' + movediv.innerHTML + '</ul>';
+                    // document.getElementById('playmovs').append(ul);
+
+                    //$('#playmovsul').attr('li', movediv);
+                    // $('#playmovsul').append(movediv);
+                }
+                //console.log(movediv);
+
+                document.getElementById('playmovsul').innerHTML += movediv;
+                $('#rno').val( parseInt($('#rno').val()) + 1);
+
+
             })
             .fail(function (xhr, status, error) {
                 alert(xhr.status + "/" + error);
 
-            })
+            });
+
+        // $('.replayli').find('img').remove();
+        <%--$('.replayli').append('<img src="${test[1].fname}">');--%>
+
     });
 
 </script>

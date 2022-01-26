@@ -100,7 +100,7 @@
     <div class="form-group row">
         <div class="col"></div>
 
-            <select name="event" id="event" class="form-control col-4" style="font-size: 25px; font-weight: bold; margin-right: 10px">
+            <select name="event" id="event" class="form-control col-3" style="font-size: 25px; font-weight: bold; margin-right: 10px">
                 <option>종목</option>
                 <option value="skijump">스키점프</option>
                 <option value="skeleton">스켈레톤</option>
@@ -109,7 +109,7 @@
                 <option value="figure">피겨</option>
             </select>
 
-        <select name=country id="country" class="form-control col-4" style="font-size: 25px; font-weight: bold; margin-right: 10px">
+        <select name=country id="country" class="form-control col-3" style="font-size: 25px; font-weight: bold; margin-right: 10px">
             <option>팀</option>
             <option value="kor">한국</option>
             <option value="usa">미국</option>
@@ -117,17 +117,18 @@
             <option value="fra">프랑스</option>
             <option value="jpn">일본</option>
         </select>
-        <div class="col-3"></div>
+        <div class="col-5"></div>
     </div>
 
     <div class="row">
         <div class="col"></div>
         <div class="col-10" id="playmovs">
-            <ul id="movlist">
+            <ul id="playmovsul">
             <c:forEach var="r" items="${rbd}" >
-            <li style="margin-right: 50px">
-                <a href="">
-                    <div class="replayli" style="position: relative"><img src="${r.fname}" style="width: 380px;"></div>
+            <li class="movlist" style="margin-right: 50px">
+                <div class="movcontent" style="margin-left: -35px">
+                <a href="/replay/view">
+                    <div class="replayli" style="position: relative"><img src="${r.fname}" style="width: 380px; height: 214px"></div>
                     <div style="position: absolute; margin: -41px 0 0 0"><button type="button" class="btn btn-primary" style="font-size: 15px">${r.event}</button></div>
                     <div style="position: absolute; margin: -41px 0 0 110px"><button type="button" class="btn btn-primary"><i class="bi bi-play-fill"></i></button></div>
                     <div style="position: absolute; margin: -41px 0 0 155px"><button type="button" style="width: 95px; height: 40px; font-size: 20px" class="btn btn-dark">2:30</button></div>
@@ -136,8 +137,11 @@
                     <p style="width:380px; font-size:25px">${r.title}</p>
                 </a>
 
+                </div>
             </li>
             </c:forEach>
+
+                <input type="hidden" id="rno" name="rno" value="1">
             </ul>
         </div>
         <div class="col"></div>

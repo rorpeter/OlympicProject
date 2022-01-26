@@ -39,7 +39,6 @@ public class ReplayController {
     public void morePlay(String rno, HttpServletResponse res){
 
         try {
-            // 응답결과를 JSON으로 설정하고 한글 인코딩은 UTF-8로 MIME type지정
             res.setContentType("application/json; charset=UTF-8");
 
             res.getWriter().print( rsrv.morePlay(rno) );
@@ -48,6 +47,12 @@ public class ReplayController {
         }
 
 
+    }
+
+    @GetMapping("/replay/view")
+    public String view() {
+
+        return "replay/view.tiles";
     }
 
 

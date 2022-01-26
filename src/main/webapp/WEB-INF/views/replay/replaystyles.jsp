@@ -9,7 +9,7 @@
     #main { margin-top: 20px}
     img{width: 100%}
 
-    #movlist { float: left; }
+    #playmovs ul li{ float: left; }
 
     p {word-wrap: break-word;}
 

@@ -32,11 +32,13 @@ public class ReplayServiceImpl implements ReplayService {
 
     @Override
     public String morePlay(String rno) {
+        int startnum = (Integer.parseInt(rno)-1)*3;
+
         ObjectMapper mapper = new ObjectMapper();
         String json = "";
 
         try {
-            json = mapper.writeValueAsString(rdao.selectAjaxReplay(rno));
+            json = mapper.writeValueAsString(rdao.selectAjaxReplay(startnum));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
