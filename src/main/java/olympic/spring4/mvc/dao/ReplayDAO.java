@@ -11,4 +11,8 @@ public interface ReplayDAO {
     int countReplay(String event, String country);
 
     List<ReplayVO> selectAjaxReplay(int startnum);
+
+    ReplayVO selectOneReplay(String rno);
+
+    List<ReplayVO> selectAllReplay();
 }

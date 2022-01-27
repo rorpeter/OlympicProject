@@ -17,8 +17,10 @@ public class ReplayDAOImpl implements ReplayDAO {
     @Value("#{sql['pagingReplay']}") private String pagingReplay;
     @Value("#{sql['countReplay']}") private String countReplay;
     @Value("#{sql['selectAjaxReplay']}") private String selectAjaxReplay;
+    @Value("#{sql['selectOneReplay']}") private String selectOneReplay;
+    @Value("#{sql['selectAllReplay']}") private String selectAllReplay;
 
-
+    // 다시보기 메인페이지 처리
     @Override
     public List<ReplayVO> selectReplay(int startnum, String event, String country) {
         Object[] params = new Object[] { startnum };
@@ -50,6 +52,7 @@ public class ReplayDAOImpl implements ReplayDAO {
 
     }
 
+    // 조회수 처리
     @Override
     public int countReplay(String event, String country) {
 
@@ -69,6 +72,7 @@ public class ReplayDAOImpl implements ReplayDAO {
 
     }
 
+    // 더보기 처리
     @Override
     public List<ReplayVO> selectAjaxReplay(int startnum) {
         Object[] params = new Object[] { startnum };
@@ -84,6 +88,40 @@ public class ReplayDAOImpl implements ReplayDAO {
                         rs.getString("fname"),
                         rs.getString("contents") ) );
 
+    }
+
+    // 영상 보기 관련
+    @Override
+    public ReplayVO selectOneReplay(String rno) {
+        Object[] params = new Object[] { rno };
+
+        return jdbcTemplate.queryForObject(selectOneReplay, params,
+                (rs, num) -> new ReplayVO(
+                        rs.getString("rno"),
+                        rs.getString("title"),
+                        rs.getString("event"),
+                        rs.getString("country"),
+                        rs.getString("rec"),
+                        rs.getString("views"),
+                        rs.getString("fname"),
+                        rs.getString("contents")
+                ));
+    }
+
+    @Override
+    public List<ReplayVO> selectAllReplay() {
+        Object[] params = new Object[] { };
+
+        return jdbcTemplate.query(selectAllReplay, params,
+                (rs, num) -> new ReplayVO(
+                        rs.getString("rno"),
+                        rs.getString("title"),
+                        rs.getString("event"),
+                        rs.getString("country"),
+                        rs.getString("rec"),
+                        rs.getString("views"),
+                        rs.getString("fname"),
+                        rs.getString("contents") ) );
     }
 
 }

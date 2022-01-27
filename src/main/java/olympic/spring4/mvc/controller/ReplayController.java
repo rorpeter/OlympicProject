@@ -21,6 +21,8 @@ public class ReplayController {
         this.rsrv = rsrv;
     }
 
+
+    // 다시보기 메인 페이지
     @GetMapping("/replay")
     public ModelAndView list(ModelAndView mv, String cpage, String event, String country) {
 
@@ -34,6 +36,7 @@ public class ReplayController {
         return mv;
     }
 
+    // Ajax를 이용한 더보기 출력 처리
     @ResponseBody
     @GetMapping("/replay/morePlay")
     public void morePlay(String rno, HttpServletResponse res){
@@ -45,15 +48,17 @@ public class ReplayController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
+    // 영상 보기 처리
     @GetMapping("/replay/view")
-    public String view() {
+    public ModelAndView view(String rno, ModelAndView mv) {
 
-        return "replay/view.tiles";
+        mv.setViewName("replay/view.tiles");
+        // rsrv.viewCountReplay(rno);
+        mv.addObject("rvo", rsrv.readOneReplay(rno));
+        mv.addObject("rvoall", rsrv.readAllReplay());
+
+        return mv;
     }
-
-
 }

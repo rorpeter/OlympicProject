@@ -15,7 +15,7 @@ public class ReplayServiceImpl implements ReplayService {
 
     @Autowired private ReplayDAO rdao;
 
-
+    // 다시보기 메인 페이지 출력
     @Override
     public List<ReplayVO> readReplay(String cpage, String event, String country) {
 
@@ -24,12 +24,14 @@ public class ReplayServiceImpl implements ReplayService {
         return rdao.selectReplay(startnum, event, country);
     }
 
+    // 조회수 관련
     @Override
     public int countReplay(String event, String country) {
 
         return rdao.countReplay(event,country);
     }
 
+    // 더보기 관련
     @Override
     public String morePlay(String rno) {
         int startnum = (Integer.parseInt(rno)-1)*3;
@@ -44,6 +46,19 @@ public class ReplayServiceImpl implements ReplayService {
         }
 
         return json;
+    }
+
+    // 영상 보기 관련
+    @Override
+    public ReplayVO readOneReplay(String rno) {
+
+        return rdao.selectOneReplay(rno);
+    }
+
+    @Override
+    public List<ReplayVO> readAllReplay() {
+
+        return rdao.selectAllReplay();
     }
 
 

@@ -1,7 +1,9 @@
 package olympic.spring4.mvc.dao;
 
 
+import olympic.spring4.mvc.vo.EventVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -9,6 +11,24 @@ import org.springframework.stereotype.Repository;
 public class EventDAOImpl implements EventDAO {
 
     @Autowired private JdbcTemplate jdbcTemplate;
+    @Value("#{sql['selectOneEvent']}") private String selectOneEvent;
+
+    @Override
+    public EventVO selectOneEvent(String event) {
+        Object[] params = new Object[] { event };
+
+        return jdbcTemplate.queryForObject(selectOneEvent, params,
+                (rs, num) -> new EventVO(
+                  rs.getString("eno"),
+                  rs.getString("event"),
+                  rs.getString("eventkor"),
+                  rs.getString("exp"),
+                  rs.getString("best"),
+                  rs.getString("schedule"),
+                  rs.getString("place"),
+                  rs.getString("play"),
+                  rs.getString("history")));
+    }
 
     //@Value("#{sql['selectReplay']}") private String selectReplay;
 

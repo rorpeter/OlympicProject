@@ -2,9 +2,7 @@
 
 <script>
 
-    var cnt = 0;
-
-    // 종목 및 나라별 검색
+    // 종목별 검색
     $('#event').on('change', function() {
 
         let params = '?event=' + $('#event option:selected').val();
@@ -12,20 +10,18 @@
         if ($('#event option:selected').val() == "") location.href = '/replay';
 
         else { location.href = '/replay' + params; }
-
-
     });
 
+    // 나라별 검색
     $('#country').on('change', function() {
-
 
         let params = '?country=' + $('#country option:selected').val();
 
         location.href = '/replay' + params;
-
     });
 
 
+    // 더보기 영상출력을 위한 형식 변환
     function makemovs(fname,event, title) {
         let makemovstr = '<li style="margin-right: 50px">';
         makemovstr += '<a href="">';
@@ -47,24 +43,10 @@
     }
 
 
-
     // 더보기 영상 출력 처리
     $('#morebtn').on('click', function () {
 
-        // $('#playmovs').attr('style', 'padding-bottom:299px');
-
-        // var div = document.createElement('div');
-        // var body = document.getElementById('playmovsul');
-
-        // div.innerHTML = document.getElementById('playmovsul').innerHTML;
-        //div.innerHTML = document.getElementById('playmovs').innerHTML;
-
-        //document.body.insertBefore(div, end);
-        // body.appendChild(div);
-
-        // $('.movcontent').find('ul').remove();
-
-        alert(document.getElementById('rno').value);
+        //alert(document.getElementById('rno').value);
 
         $.ajax({
             url: '/replay/morePlay',
@@ -75,49 +57,21 @@
             .done(function (data) {
                 let d = JSON.stringify(data);
                 let test = JSON.parse(d);
-
-
-
                 let movediv = '';
 
                 for(var i=0; i<makemovs.length; i++) {
                     console.log(test[i]);
                     movediv += makemovs(test[i].fname, test[i].event, test[i].title);
-
-                    //document.write(movediv);
-
-                    // let codes = movediv;
-                    // return (
-                    //     <div dangerouslySetInnerHTML={ {__html: codes} }>
-                    //     </div>
-                    // );
-
-
-                    //document.getElementById('playmovsul').append(movediv).innerHTML;
-
-                    //document.getElementById('playmovsul').append(movediv);
-
-                    // let ul = '<ul>' + movediv.innerHTML + '</ul>';
-                    // document.getElementById('playmovs').append(ul);
-
-                    //$('#playmovsul').attr('li', movediv);
-                    // $('#playmovsul').append(movediv);
                 }
-                //console.log(movediv);
 
                 document.getElementById('playmovsul').innerHTML += movediv;
                 $('#rno').val( parseInt($('#rno').val()) + 1);
-
 
             })
             .fail(function (xhr, status, error) {
                 alert(xhr.status + "/" + error);
 
             });
-
-        // $('.replayli').find('img').remove();
-        <%--$('.replayli').append('<img src="${test[1].fname}">');--%>
-
     });
 
 </script>

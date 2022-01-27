@@ -48,17 +48,8 @@
 <nav class="nav navbar-expand navbar-light bg-light border">
 
     <ul class="navbar-nav nav-fill w-100">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="event" role="button" id="dropdownMenuLink"
-            data-toggle="dropdown" aria-expanded="false">종목</a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <div class="dropdown-item" href="#"><img src="/imgss/event/skijump_red.png"><p>스키점프</p></div>
-                <div class="dropdown-item" href="#"><img src="/imgss/event/skeleton_red.png"><p>스켈레톤</p></div>
-
-
-
-
-            </div>
+        <li class="nav-item">
+            <a class="nav-link" href="../event">종목</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="schedule">일정</a>
@@ -67,7 +58,7 @@
             <a class="nav-link" href="news/agree.html">뉴스</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="replay">다시보기</a>
+            <a class="nav-link" href="../replay">다시보기</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="board/list.html">게시판</a>

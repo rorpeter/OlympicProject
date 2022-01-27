@@ -99,7 +99,6 @@
 
     <div class="form-group row">
         <div class="col"></div>
-
             <select name="event" id="event" class="form-control col-3" style="font-size: 25px; font-weight: bold; margin-right: 10px">
                 <option>종목</option>
                 <option value="skijump">스키점프</option>
@@ -127,7 +126,7 @@
             <c:forEach var="r" items="${rbd}" >
             <li class="movlist" style="margin-right: 50px">
                 <div class="movcontent" style="margin-left: -35px">
-                <a href="/replay/view">
+                <a href="/replay/view?rno=${r.rno}">
                     <div class="replayli" style="position: relative"><img src="${r.fname}" style="width: 380px; height: 214px"></div>
                     <div style="position: absolute; margin: -41px 0 0 0"><button type="button" class="btn btn-primary" style="font-size: 15px">${r.event}</button></div>
                     <div style="position: absolute; margin: -41px 0 0 110px"><button type="button" class="btn btn-primary"><i class="bi bi-play-fill"></i></button></div>

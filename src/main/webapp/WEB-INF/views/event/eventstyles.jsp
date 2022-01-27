@@ -9,8 +9,12 @@
     #main { margin-top: 20px}
     img{width: 100%}
 
-    ul { float: left; }
+    li{ float: left; }
 
-    p {word-wrap: break-word;}
+    .eventli img {width: 130px; height: 221px; margin-right: 50px}
+
+    .eventli p {margin-left: 31px;
+        margin-top: 5px;
+        font-weight: bolder}
 
 </style>
